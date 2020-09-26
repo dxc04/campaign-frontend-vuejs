@@ -45,7 +45,7 @@ export default new Vuex.Store({
         })
     },
     updateCampaign ({ commit }, campaign) {
-      fetch(`http://localhost:4000/campaign/${campaign.id}`, { method: 'POST', body: JSON.stringify(campaign) })
+      fetch(`http://localhost:4000/campaign/${campaign.id}`, { method: 'PUT', body: JSON.stringify(campaign) })
         .then(response => response.json())
         .then(data => {
             commit('updateCampaign', data)
